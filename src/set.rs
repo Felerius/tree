@@ -110,6 +110,25 @@ impl<T, C> Set<T, C> where C: Compare<T> {
     /// ```
     pub fn cmp(&self) -> &C { self.map.cmp() }
 
+    /// Returns a mutable reference to the set's comparator.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # extern crate compare;
+    /// # extern crate tree;
+    /// # fn main() {
+    /// use compare::{Compare, natural};
+    ///
+    /// let mut set = tree::Set::new();
+    /// assert!(set.cmp_mut().compares_lt(&1, &2));
+    ///
+    /// let mut set: tree::Set<_, _> = tree::Set::with_cmp(natural().rev());
+    /// assert!(set.cmp_mut().compares_gt(&1, &2));
+    /// # }
+    /// ```
+    pub fn cmp_mut(&mut self) -> &mut C { self.map.cmp_mut() }
+
     /// Removes all items from the set.
     ///
     /// # Examples

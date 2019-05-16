@@ -119,6 +119,25 @@ impl<K, V, C> Map<K, V, C> where C: Compare<K> {
     /// ```
     pub fn cmp(&self) -> &C { &self.cmp }
 
+    /// Returns a mutable reference to the map's comparator.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # extern crate compare;
+    /// # extern crate tree;
+    /// # fn main() {
+    /// use compare::{Compare, natural};
+    ///
+    /// let mut map: tree::Map<i32, &str> = tree::Map::new();
+    /// assert!(map.cmp_mut().compares_lt(&1, &2));
+    ///
+    /// let mut map: tree::Map<i32, &str, _> = tree::Map::with_cmp(natural().rev());
+    /// assert!(map.cmp_mut().compares_gt(&1, &2));
+    /// # }
+    /// ```
+    pub fn cmp_mut(&mut self) -> &mut C { &mut self.cmp }
+
     /// Removes all entries from the map.
     ///
     /// # Examples
