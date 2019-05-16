@@ -1,5 +1,3 @@
-#![cfg_attr(feature = "range", feature(collections_bound))]
-
 extern crate compare;
 extern crate quickcheck;
 extern crate tree;

@@ -590,7 +590,6 @@ impl<T, C> Set<T, C> where C: Compare<T> {
     /// # Examples
     ///
     /// ```
-    /// # #![feature(collections_bound)]
     /// # extern crate tree;
     /// # fn main() {
     /// use std::collections::Bound::{Excluded, Unbounded};
@@ -617,7 +616,6 @@ impl<T, C> Set<T, C> where C: Compare<T> {
     /// # Examples
     ///
     /// ```
-    /// # #![feature(collections_bound)]
     /// # extern crate tree;
     /// # fn main() {
     /// use std::collections::Bound::{Included, Excluded, Unbounded};
